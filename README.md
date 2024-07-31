@@ -7,19 +7,39 @@
 - 자녀의 일간, 주간, 심리 예측 보고서
 
 ## 1. 개발 환경
+### Back-End
+- Spring Suite Tool 4
+  
+### Front-End
+- Visual Studio
 
-## 2. 채택한 개발 기술
+### AI
+- OpenAI 3.5-turbo FineTuning API
 
-## 3. 역할 분담
+### Network
+- Apache Tomcat 9
+
+## 2. 역할 분담
 ### 임수한
+- PM
+- AI 파인 튜닝
 
 ### 박지수
+- Backend
+- PPT 작성
 
 ### 박우람
+- UI/UX
+- PPT 작성
 
 ### 양호준
+- UI/UX
 
-## 4. 개발 기간 및 작업 관리
+## 3. 개발 기간 및 작업 관리
 ### 개발 기간
-
-### 작업 관리
+- 기획
+  - 2024/06/03 ~ 2024/06/14
+- 개발
+  - 2024/07/25 ~ 2024/08/01
+- 배포
+  - 미정
