@@ -1,0 +1,925 @@
+/* main.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: transparent;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    padding: 0 35px;
+    height: 100%;
+    font-size: clamp(16px, 2vw, 25px);
+}
+
+nav .logo {
+    flex: 1;
+}
+
+nav .logo img {
+    width: 50%; /* 원하는 크기로 조정 */
+}
+
+nav .menu {
+    flex: 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul img {
+    width: 100px;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    background-color: transparent; /* 배경색 투명 */
+    color: #D0F0C0; /* 티그린 색상 */
+    border-radius: 5px; /* 둥근 테두리 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* hover 시 그림자 추가 */
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: 5px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+.submenu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.submenu li a:hover {
+    background-color: transparent;
+    color: #96b7da;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.hero-content {
+    max-width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    padding-top: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/*여기까지 동영상코드 */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.service {
+    margin-bottom: 5vh;
+    margin-top: 20vh;
+    padding: 5vh;
+}
+
+.service h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.service h4 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 5vh;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: row; /* Change flex-direction to row */
+    justify-content: space-between; /* Align items with space between them */
+    align-items: flex-start;
+    border: 1px solid white;
+    padding: 20px;
+    margin-bottom: 8vh;
+    border-radius: 5px;
+    transition: box-shadow 1s ease;
+}
+
+.service-item:hover {
+    border-radius: 5px; /* 둥근 테두리 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* hover 시 그림자 추가 */
+}
+
+.service-item.service-item-a {
+    background-color: #f0f8ff;
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.service-item.service-item-b {
+    background-color: #ffe4e1;
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.service-item.service-item-c {
+    background-color: #f0fff0;
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.service-item.service-item-d {
+    background-color: #f5f5dc;
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.service-text {
+    margin-bottom: 20px;
+    flex: 1; /* Allow text content to expand flexibly */
+}
+
+.service-image {
+    flex: 0.5; /* Expand to fill remaining space */
+    margin-left: 20px; /* Add margin between text and image */
+}
+
+.service-image img {
+    width: 90%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-item h5 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.service-item a {
+    display: inline-block;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer {
+    background: gray;
+    color: #333;
+    text-align: left;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 13px;
+}
+
+.contact-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+@media (min-width: 1200px) {
+    .business-item {
+        flex-basis: calc(25% - 20px);
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    #menu {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .business-item {
+        flex-basis: calc(50% - 20px);
+    }
+
+    .service-item {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .service-image {
+        flex: 1;
+        margin-right: 20px;
+        margin-left: 60px;
+    }
+
+    .service-text {
+        flex: 1;
+        margin-left: 20px;
+    }
+
+    .logo img {
+        width: 20%;
+    }
+
+    nav .logo {
+        flex: 1;
+    }
+
+    nav .menu {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white; /* Default text color */
+        position: relative;
+        padding: 10px 15px;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #D0F0C0; /* 티그린 색상 */
+    }
+
+    /* Different color for hero section */
+    .hero nav ul li a {
+        color: white; /* Change text color for hero section */
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: transparent;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .submenu {
+        position: absolute;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+    }
+
+    .submenu.show {
+        display: block;
+    }
+
+    .submenu li {
+        display: block;
+        padding: 10px;
+    }
+
+    .submenu li a {
+        color: #333;
+    }
+}
+
+@media (max-width: 768px) {
+    nav .logo img {
+        /* Reduce logo size */
+        height: 85px;
+        width: 220px !important;
+    }
+
+    nav .menu {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Position menu toggle button to the right */
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        color: #fff; /* Text color for menu toggle */
+        font-size: 24px; /* Font size for menu toggle */
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column; /* Display menu items in a column */
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Align items to the center */
+        width: 100%; /* Full width for menu items */
+        background-color: rgba(0, 0, 0, 0.8); /* Background color for menu items */
+        position: absolute;
+        top: 60px; /* Position below the header */
+        left: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        padding: 10px 0; /* Add padding to menu items */
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Adjust spacing between menu items */
+    }
+
+    nav ul li a {
+        color: #fff; /* Text color for menu items */
+        text-decoration: none;
+        padding: 10px 15px; /* Add padding to menu item links */
+        display: block; /* Display links as block */
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Background color on hover */
+        color: #fff; /* Text color on hover */
+        border-radius: 5px; /* Rounded corners on hover */
+    }
+
+    .submenu {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .submenu li {
+        padding: 10px;
+    }
+
+    .submenu li a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .service-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center; /* Center items horizontally */
+        border: 1px solid white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        text-align: center; /* Center text horizontally */
+    }
+
+    .service-item h3 {
+        font-size: 1.5em; /* Reduce font size for smaller screens */
+        margin-bottom: 10px;
+    }
+
+    .service-item h5 {
+        font-size: 1em; /* Reduce font size for smaller screens */
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        font-size: 0.8em; /* Reduce font size for smaller screens */
+        margin-bottom: 10px;
+        text-align: center; /* Center text horizontally */
+    }
+
+    .service-item a {
+        display: inline-block;
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    .service-text {
+        margin-bottom: 20px;
+    }
+
+    .service-image img {
+        width: 100%; /* Full width for images */
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .scroll-image {
+        width: 100%; /* Full width for scroll image */
+        transition: width 0.6s ease;
+    }
+
+    .scroll-image.grow {
+        width: 100%;
+        height: 80vh;
+    }
+
+    .overlay-text {
+        font-size: 0.8em; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Hero Section에서 네비게이션 바 색상 변경 */
+.hero + .service {
+    padding-top: 0;
+}
+
+#header.scrolled {
+    background-color: #fff;
+}
+
+#header.scrolled nav ul li a {
+    color: #333;
+}
+
+.fixed-background {
+    position: relative;
+    height: 100vh;
+    background-color: #f8f9fa;
+    padding: 100px 0;
+    text-align: center;
+    background-image: url('../image/fixedBackground.jpg');  /* 여기경로 안바꾸면 깨짐 */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fixed-background .hero-content {
+    max-width: 800px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+}
+
+.fixed-background .hero-content .hero-logo {
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.fixed-background h1 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.fixed-background p {
+    font-size: 1.2em;
+    color: whitesmoke;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.image-section {
+    background-image: url('../images/scroll.jpg');
+    background-size: cover; /* 이미지를 요소에 맞게 확대/축소하여 배경으로 채움 */
+    background-position: center; /* 이미지를 가운데 정렬 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+    height: 80vh; /* 원하는 높이 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section::before {
+    content: ''; /* 가상 요소 사용 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* 이미지 위에 반투명 레이어 추가 */
+}
+
+.scroll-image {
+    width: 500px; /* Initial width */
+    transition: width 0.6s ease; /* Smooth width transition */
+    display: block; /* Ensures img element behaves as a block */
+    max-width: 100%; /* Ensures image does not exceed container width */
+    height: auto; /* Maintains aspect ratio */
+    z-index: 1; /* Ensure image is behind overlay */
+}
+
+.scroll-image.grow {
+    width: 100%;
+    height: 80vh;
+}
+
+.overlay-textTop {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 5%; /* Center horizontally */
+    transform: translate(0, -50%); /* Center the overlay text */
+    text-align: left; /* Center text within the overlay */
+    color: white; /* Text color */
+    z-index: 2; /* Ensure text is above the background image */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit max width */
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the overlay text */
+    text-align: center; /* Center text within the overlay */
+    color: white; /* Text color */
+    z-index: 2; /* Ensure text is above the background image */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit max width */
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+.overlay-textTop h6top {
+    text-align: left;
+    font-size: clamp(2rem, 4.5vw + 1rem, 6.5rem);
+    /* font-size: 6.5em; */
+    font-weight: 600;  /* 볼드효과 */
+    margin-bottom: 0px;
+    line-height: 1.05; /* 줄 간격을 줄임 */
+    letter-spacing: -0.02em; /* 글자 간격을 약간 줄임 */
+}
+
+.overlay-textTop p6top {
+    font-size: clamp(1rem, 2vw + 0.5rem, 2rem);
+    margin-top: 1rem;
+    line-height: 0.8; /* 줄 간격을 줄임 */
+    text-align: left;
+    /* font-size: 2em; */
+    margin-bottom: 0;
+}
+
+.overlay-text h2 {
+    font-size: 5em;
+    margin-bottom: 10px;
+}
+
+.overlay-text p {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.hero .overlay-text {
+    max-width: 1200px; /* Adjust max width for hero section */
+    position: relative; /* 동영상 추가코드 */
+    z-index: 1; /* 동영상 추가코드 */
+}
+
+.fixed-background .overlay-text {
+    max-width: 1000px; /* Adjust max width for fixed background section */
+    color: white; /* Adjust text color for fixed background section */
+}
+
+.image-section .overlay-text {
+    max-width: 1200px;
+}
+
+/*  index 추가를 위한 css 추가 */
+
+/* 고정 네비게이션을 위한 새로운 스타일 */
+#fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1001; /* header보다 높은 z-index */
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#fixed-nav.visible {
+    display: block;
+}
+
+nav .logo img {
+    width: 50%;
+}
+
+#fixed-nav nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#fixed-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#fixed-nav ul li {
+    margin: 0 15px;
+}
+
+#fixed-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#fixed-nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    #fixed-nav nav {
+        flex-direction: column;
+    }
+
+    #fixed-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #fixed-nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* 기존 header 스타일 수정 */
+header {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: #fff;
+}
+
+header.scrolled nav ul li a {
+    color: #333;
+}
+
+/* 우측 상단 로고박스 드랍다운 */
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+nav ul li:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-dropdown a:hover {
+    background-color: transparent;
+    color: skyblue;
+}
+
+/* 추가된 #menu-toggle 스타일 */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 추가된 .hidden 클래스 */
+.hidden {
+    display: none;
+}
+
+/* 수정된 미디어 쿼리 */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .user-dropdown {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .user-dropdown a {
+        padding-left: 30px;
+    }
+}
+
+/* dropdown을 위한 추가 css */
+
+/* 드롭다운 메뉴 스타일 */
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.user-dropdown a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-dropdown a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 섹션 스타일 */
+.section {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.section.active {
+    display: block;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .user-dropdown {
+        width: 100%;
+        left: 0;
+    }
+}
