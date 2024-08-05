@@ -8,21 +8,23 @@
 
 ## 1. 개발 환경
 ### Back-End
-- Spring Suite Tool 4
+- Spring Suite Tool 3
   
 ### Front-End
-- Visual Studio
+- Visual Studio (CSS, HTML, JavaScript)
 
 ### AI
-- OpenAI 3.5-turbo FineTuning API
+- OpenAI 3.5-turbo FineTuning API (as Chat)
+- ClovaX HCX-003 (as Chat)
+- OpenAI 4.5-turbo (as Emotion Analysis)
 
 ### Network
 - Apache Tomcat 9
 
 ## 2. 역할 분담
 ### 임수한
-- PM
-- AI 파인 튜닝
+- PM, Presenter
+- AI FineTuning
 
 ### 박지수
 - Backend
@@ -41,5 +43,3 @@
   - 2024/06/03 ~ 2024/06/14
 - 개발
   - 2024/07/25 ~ 2024/08/01
-- 배포
-  - 미정
