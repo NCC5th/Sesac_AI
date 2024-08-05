@@ -1,4 +1,4 @@
-# 취약계층 자녀 심리를 위한 AI 안전망 서비스 (새싹톤 출품)
+# 취약계층 자녀 심리를 위한 AI 안전망 서비스
 ![image](https://github.com/user-attachments/assets/6d35e995-d5d1-4f27-aa2f-d6052a195d77)
 
 ## 프로젝트 소개
